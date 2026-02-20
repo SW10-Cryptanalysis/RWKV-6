@@ -1,9 +1,19 @@
 [project]
 name = "rwkv-6"
 version = "0.1.0"
-description = "Add your description here"
+description = "RWKV-v6 Finch implementation using Flash Linear Attention"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "torch>=2.10.0",
+    "triton>=3.2.0",
+    "flash-linear-attention>=0.4.1",
+    "transformers>=4.48.0",
+    "einops>=0.8.0",
+    "accelerate",
+    "huggingface-hub",
 ]
+
+[tool.uv]
+# This tells uv to allow git dependencies if you ever need the bleeding-edge FLA
+# flash-linear-attention = { git = "https://github.com/fla-org/flash-linear-attention" }
