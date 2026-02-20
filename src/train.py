@@ -1,3 +1,9 @@
+import os
+
+os.environ["TRITON_DISABLE_CACHE"] = "1"
+os.environ["TRITON_CACHE_DIR"] = "/tmp/triton"
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 import torch
 from model import get_model
 from transformers import Trainer, TrainingArguments
