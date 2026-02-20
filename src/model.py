@@ -23,6 +23,6 @@ def get_model():
 
     model = RWKV6ForCausalLM(conf)
 
-    replace_layer_norms(model)  # 👈 important
+    replace_layer_norms(model)
 
     return model.to(torch.bfloat16).cuda()
